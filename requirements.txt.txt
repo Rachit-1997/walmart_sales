@@ -1,0 +1,73 @@
+pandas
+numpy
+sqlalchemy
+psycopg2
+
+# Environment Setup Instructions
+
+## System Requirements
+- Windows 11
+- Python 3.8+
+- PostgreSQL 17.4
+
+## Windows Setup Commands
+
+### Python Environment Setup
+```cmd
+# Verify Python installation
+python --version
+
+# Upgrade pip
+python -m pip install --upgrade pip
+
+# Install required packages
+pip install -r requirements.txt
+```
+
+### PostgreSQL Setup
+```cmd
+# Download and install PostgreSQL from official website
+# https://www.postgresql.org/download/windows/
+# During installation, remember the password for postgres user
+```
+
+### Kaggle API Configuration
+```cmd
+# Create Kaggle directory
+mkdir %USERPROFILE%\.kaggle
+
+# Download kaggle.json from Kaggle account settings
+# Copy to Kaggle directory
+copy %USERPROFILE%\Downloads\kaggle.json %USERPROFILE%\.kaggle\
+
+# Install Kaggle API
+pip install kaggle
+```
+
+### Dataset Download
+```cmd
+# Navigate to project directory
+cd your-project-directory
+
+# Download dataset
+kaggle datasets download -d najir0123/walmart-10k-sales-datasets
+
+# Extract dataset
+tar -xf walmart-10k-sales-datasets.zip
+```
+
+### Database Connection Setup
+```cmd
+# Start PostgreSQL service (if not already running)
+ 
+
+# Connect to PostgreSQL
+psql -U postgres -W localhost
+```
+
+## Installation Summary
+1. Install Python 3.13.3 and PostgreSQL
+2. Set up Kaggle API with credentials
+3. Install Python packages: `pip install -r requirements.txt`
+4. Download and extract dataset using Kaggle API
+5. Configure PostgreSQL connection for data loading
